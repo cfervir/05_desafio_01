@@ -1,0 +1,159 @@
+.container {
+  max-width: calc(900px + 5em);
+  margin: 0 1em;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+.container--flex {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.container--nav {
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 1.125rem;
+  flex-direction: column-reverse;
+}
+
+.container--nav .links + .links {
+  margin-top: 0.5em;
+}
+
+.header {
+  background-color: #de3446;
+  padding: 1em 0;
+}
+
+.brand {
+  padding-bottom: 0.75em;
+}
+
+.links {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+}
+
+.links--decor {
+  position: relative;
+}
+
+.links--decor::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .2s ease-in;
+}
+
+.links--decor:hover::after,
+.links--decor:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.pageTitle {
+  padding-top: 1em;
+  line-height: 1.4;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+@media (min-width: 500px) {
+  .container--nav {
+    flex-direction: row;
+  }
+  .container--nav .links + .links {
+    margin-top: 0;
+  }
+  .header {
+    padding: 0.75em 0.5em;
+  }
+  .brand {
+    padding-bottom: 0;
+  }
+  .links {
+    width: initial;
+    display: inline-block;
+  }
+  .links + .links {
+    margin-left: 1.5em;
+  }
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+}
+
+.cake {
+  margin: 0 auto;
+  font-size: 5rem;
+  transition: transform .2s ease-in-out;
+}
+
+.cake:hover {
+  transform: scale(1.2);
+  transition: transform .2s ease-in-out;
+}
+
+.form {
+  margin-top: 0.75em;
+  flex-direction: column;
+}
+
+.form * + * {
+  margin-top: 0.5em;
+}
+
+.form--input {
+  align-self: center;
+  width: 100%;
+  max-width: 50rem;
+  padding: 0.4em 0.6em;
+  border-radius: 0.5em;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  outline: none;
+}
+
+.form--input:hover,
+.form--input:focus {
+  border: 1px solid rgba(165, 0, 0, 0.5);
+  transition: border .2s ease-in;
+}
+
+.form--data {
+  height: 5rem;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 0.35rem;
+  background-color: #de3446;
+  color: #ffffff;
+  padding: 0.5em 0.8em;
+  margin-top: 1em;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #9b222e;
+  transition: background-color .2s ease-in;
+}
